@@ -17,15 +17,6 @@ var currencies = {
         "code": "USD",
         "name_plural": "US dollars"
     },
-    "CAD": {
-        "symbol": "CA$",
-        "name": "Canadian Dollar",
-        "symbol_native": "$",
-        "decimal_digits": 2,
-        "rounding": 0,
-        "code": "CAD",
-        "name_plural": "Canadian dollars"
-    },
     "EUR": {
         "symbol": "€",
         "name": "Euro",
@@ -196,6 +187,15 @@ var currencies = {
         "rounding": 0,
         "code": "BZD",
         "name_plural": "Belize dollars"
+    },
+    "CAD": {
+        "symbol": "CA$",
+        "name": "Canadian Dollar",
+        "symbol_native": "$",
+        "decimal_digits": 2,
+        "rounding": 0,
+        "code": "CAD",
+        "name_plural": "Canadian dollars"
     },
     "CDF": {
         "symbol": "CDF",
@@ -1070,7 +1070,7 @@ var currencies = {
         "code": "ZMK",
         "name_plural": "Zambian kwachas"
     }
-}
+};
 
 Object.keys(currencies).forEach(function (currency) {
    Money[currency] = currencies[currency];
