@@ -55,6 +55,37 @@ Money.prototype.subtractC = function(other) {
   return self.subtract(other);
 };
 
+
+/**
+ * Returns the smallest of the two money objects,  but converts the second to match the first
+ *
+ * @param {Money} other
+ * @returns {Money}
+ */
+Money.prototype.minC = function(other) {
+  var self = this;
+  if (Money.isMoney(other)) {
+    other = other.convert(self.getCurrency());
+  }
+
+  return (self.amount <= other.amount) ? self : other;
+};
+
+/**
+ * Returns the largest of the two money objects,  but converts the second to match the first
+ *
+ * @param {Money} other
+ * @returns {Money}
+ */
+Money.prototype.maxC = function(other) {
+  var self = this;
+  if (Money.isMoney(other)) {
+    other = other.convert(self.getCurrency());
+  }
+
+  return (self.amount >= other.amount) ? self : other;
+};
+
 /**
  * Gets the current exchange rate
  * @param  {String} fromC [fromCurrency]
@@ -66,5 +97,8 @@ Money.getCurrentExchangeRate = function(fromC, toC) {
     from: fromC,
     to: toC
   });
-  return { rate: fx && rate || 0, timestamp: fx && (fx.timestamp * 1000) || 0 };
+  return {
+    rate: fx && rate || 0,
+    timestamp: fx && (fx.timestamp * 1000) || 0
+  };
 };

@@ -300,5 +300,22 @@ Money.isMoney = function(n) {
   return (n instanceof Money);
 };
 
+/**
+ * Checks if a currency is legal
+ *
+ * @returns {Boolean}
+ */
+Money.validateCurrency = function(currency) {
+  try {
+    getCurrencyObject(currency);
+  }
+  catch (error) {
+    if (error instanceof TypeError)
+      return false;
+    throw error;
+  }
+  return true;
+};
+
 if (typeof module === 'object')
     module.exports = Money;

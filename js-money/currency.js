@@ -1069,7 +1069,16 @@ var currencies = {
         "rounding": 0,
         "code": "ZMK",
         "name_plural": "Zambian kwachas"
-    }
+    },
+    // "BTC": {
+    //     "symbol": "BTC",
+    //     "name": "Bitcoin",
+    //     "symbol_native": "BTC",
+    //     "decimal_digits": 8,
+    //     "rounding": 0,
+    //     "code": "BTC",
+    //     "name_plural": "Bitcoin"
+    // },
 };
 
 Object.keys(currencies).forEach(function (currency) {
