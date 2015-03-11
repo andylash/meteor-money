@@ -264,6 +264,14 @@ Money.prototype.max = function(other) {
     return (self.amount >= other.amount) ? self : other;
 };
 
+/**
+ * Returns true if the input data matches the form of a money object
+ *
+ * @returns {Boolean}
+ */
+Money.isUntypedMoney = function(doc) {
+  return (! Money.isMoney(doc) && _.isObject(doc) && _.isNumber(doc.amount) && _.isString(doc.currency));
+};
 
 /**
  * Construct a new Money object if the input data matches the form of a money object, else it just returns input
@@ -271,7 +279,7 @@ Money.prototype.max = function(other) {
  * @returns {Money}
  */
 Money.constructMoneyIfMatching = function(doc) {
-  if (! Money.isMoney(doc) && _.isObject(doc) && _.isNumber(doc.amount) && _.isString(doc.currency)) {
+  if (Money.isUntypedMoney(doc)) {
     return new Money(doc.amount, doc.currency, true);
   }
   return doc;

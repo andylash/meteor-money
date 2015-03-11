@@ -10,6 +10,7 @@ Package.describe({
 
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@0.9.4');
+  api.use('underscore', ['client', 'server']);
   api.use('ejson', ['client', 'server']);
   api.use('http', ['client', 'server']);
   api.use('mongo', ['client', 'server']);
