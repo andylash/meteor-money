@@ -1,5 +1,5 @@
-/* global Money:true, FXRates:true */
+/* global Money:true, FXRates:true, FXRatesHelper:true */
 /* strict: false */
 Money = {};
 FXRates = {};
-
+FXRatesHelper = {};

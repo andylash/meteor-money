@@ -1,7 +1,7 @@
-/* global SyncedCron, FXRates */
+/* global SyncedCron, FXRates, FXRatesHelper */
 "use strict";
 
-var updateFxRates = function() {
+FXRatesHelper.updateFxRates = function() {
   var appId = Meteor.settings && Meteor.settings.OpenExchange && Meteor.settings.OpenExchange.appId;
   if (!appId) {
     console.error("updateFxRates: Unable to get fx rates with no app id");
@@ -24,7 +24,7 @@ var updateFxRates = function() {
 
 Meteor.startup(function() {
   Meteor.defer(function() {
-    updateFxRates();
+    FXRatesHelper.updateFxRates();
   });
 
   //this job gets updated fx rates
@@ -38,7 +38,7 @@ Meteor.startup(function() {
       return parser.text(schedule);
     },
     job: function() {
-      updateFxRates();
+      FXRatesHelper.updateFxRates();
     }
   });
 

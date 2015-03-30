@@ -46,6 +46,7 @@ Package.onUse(function (api) {
   api.addFiles('src/server/publish.js', ['server']);
 
   api.export(['Money', 'FXRates', 'fx']);
+  api.export(['FXRatesHelper'], 'server');
 });
 
 Package.onTest(function(api) {
