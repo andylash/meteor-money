@@ -14,7 +14,7 @@ Package.onUse(function (api) {
   api.use('ejson', ['client', 'server']);
   api.use('http', ['client', 'server']);
   api.use('mongo', ['client', 'server']);
-  api.use('percolatestudio:synced-cron@1.1.0', 'server');
+  api.use('percolate:synced-cron@1.2.0', 'server');
 
   api.addFiles('src/common/globals.js', ['client', 'server']);
 
