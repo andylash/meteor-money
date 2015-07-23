@@ -17,30 +17,18 @@ Package.onUse(function(api) {
   api.use('percolate:synced-cron@1.2.0', 'server');
   api.use(['cosmos:browserify@0.2.0'], 'client');
 
-
   Npm.depends({
-    "money": '0.2.0'
+    "money": '0.2.0',
+    "money-core": '0.1.1'
   });
 
   //fx rates library
   api.addFiles('src/client/client.browserify.js', 'client');
-  api.addFiles('src/server/fx.js', 'server');
-
-
   api.addFiles('src/common/globals.js', ['client', 'server']);
-
-  //this is from https://www.npmjs.org/package/js-money
-  // not pulling in NPM directly because we want it on client and server
-  api.addFiles('js-money/money.js', ['client', 'server']);
-  api.addFiles('js-money/currency.js', ['client', 'server']);
-
 
 
   //ejson types so Money type can be used in database and DDP
   api.addFiles('src/common/ejson_types.js', ['client', 'server']);
-
-  //add fx convesions to the Money object
-  api.addFiles('src/common/money_conversions.js', ['client', 'server']);
 
   //fxrates collection
   api.addFiles('src/common/fxrates.js', ['client', 'server']);
@@ -58,15 +46,3 @@ Package.onUse(function(api) {
   api.export(['FXRatesHelper'], 'server');
 });
 
-Package.onTest(function(api) {
-  api.use([
-    'tinytest',
-    'underscore',
-    'andylash:money'
-  ], 'client');
-
-  api.use(['spacejamio:munit@2.1.0'], 'client');
-
-  api.addFiles('js-money/tests/money.test.js', 'client');
-  api.addFiles('tests/money_conversions_tests.js', 'client');
-});

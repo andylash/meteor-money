@@ -20,3 +20,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+The core money object draws very extensively on work by David Kalosi. And thus some parts are
+Copyright (c) 2014 David Kalosi [http://davidkalosi.com/](http://davidkalosi.com/)
+
+The fx rate handling stuff comes from Open Exchange Rates.  Thus some parts are:
+Copyright (c) 2014 Open Exchange Rates
