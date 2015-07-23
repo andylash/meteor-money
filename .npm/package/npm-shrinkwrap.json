@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "money": {
+      "version": "0.2.0"
+    },
+    "money-core": {
+      "version": "0.1.2"
+    }
+  }
+}

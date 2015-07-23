@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 
   Npm.depends({
     "money": '0.2.0',
-    "money-core": '0.1.1'
+    "money-core": '0.1.2'
   });
 
   //fx rates library
