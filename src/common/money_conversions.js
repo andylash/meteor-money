@@ -12,7 +12,7 @@ var assertFxLibraryLoadedWithRates = function() {
 
 /**
  * Returns a new Money object converted into the requested currency
- *
+ * @param {String} toCurrency
  * @returns {String}
  */
 Money.prototype.convert = function(toCurrency) {
@@ -36,10 +36,11 @@ Money.prototype.convert = function(toCurrency) {
  */
 Money.prototype.addC = function(other) {
   var self = this;
-  if (Money.isMoney(other)) {
-    other = other.convert(self.getCurrency());
+  var o = other;
+  if (Money.isMoney(o)) {
+    o = o.convert(self.getCurrency());
   }
-  return self.add(other);
+  return self.add(o);
 };
 
 /**
@@ -49,10 +50,11 @@ Money.prototype.addC = function(other) {
  */
 Money.prototype.subtractC = function(other) {
   var self = this;
-  if (Money.isMoney(other)) {
-    other = other.convert(self.getCurrency());
+  var o = other;
+  if (Money.isMoney(o)) {
+    o = other.convert(self.getCurrency());
   }
-  return self.subtract(other);
+  return self.subtract(o);
 };
 
 
@@ -64,11 +66,12 @@ Money.prototype.subtractC = function(other) {
  */
 Money.prototype.minC = function(other) {
   var self = this;
-  if (Money.isMoney(other)) {
-    other = other.convert(self.getCurrency());
+  var o = other;
+  if (Money.isMoney(o)) {
+    o = o.convert(self.getCurrency());
   }
 
-  return (self.amount <= other.amount) ? self : other;
+  return self.amount <= o.amount ? self : o;
 };
 
 /**
@@ -79,11 +82,12 @@ Money.prototype.minC = function(other) {
  */
 Money.prototype.maxC = function(other) {
   var self = this;
-  if (Money.isMoney(other)) {
-    other = other.convert(self.getCurrency());
+  var o = other;
+  if (Money.isMoney(o)) {
+    o = o.convert(self.getCurrency());
   }
 
-  return (self.amount >= other.amount) ? self : other;
+  return self.amount >= o.amount ? self : o;
 };
 
 /**
@@ -99,6 +103,6 @@ Money.getCurrentExchangeRate = function(fromC, toC) {
   });
   return {
     rate: fx && rate || 0,
-    timestamp: fx && (fx.timestamp * 1000) || 0
+    timestamp: fx && fx.timestamp * 1000 || 0
   };
 };

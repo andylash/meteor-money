@@ -10,8 +10,9 @@ Meteor.publish('money-package-fxrates', function() {
     return;
   }
 
-  if (this.unblock) //if meteorhacks:unblock is installed, let's use it
+  if (this.unblock) {//if meteorhacks:unblock is installed, let's use it
     this.unblock();
+  }
 
   return FXRates.find({}, {
     sort: {

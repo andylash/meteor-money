@@ -1,4 +1,5 @@
 /* global SyncedCron, FXRates, FXRatesHelper */
+/* eslint no-console:0 */
 "use strict";
 
 FXRatesHelper.updateFxRates = function() {
@@ -41,5 +42,4 @@ Meteor.startup(function() {
       FXRatesHelper.updateFxRates();
     }
   });
-
 });

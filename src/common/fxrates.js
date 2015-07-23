@@ -18,7 +18,7 @@ FXRates.deny({
 
 //fx is the global object that comes from the money.js library
 var updateFx = function(doc) {
-  console.log("Initialize global fx object with rates from db");
+  console.log("Initialize global fx object with rates from db"); //eslint-disable-line no-console
   fx.base = doc.base;
   fx.rates = doc.rates;
   fx.timestamp = doc.timestamp;

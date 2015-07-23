@@ -1,5 +1,5 @@
 /* global Money:true, FXRates:true, FXRatesHelper:true */
-/* strict: false */
+/* eslint strict:0 */
 Money = {};
 FXRates = {};
 FXRatesHelper = {};

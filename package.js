@@ -8,13 +8,24 @@ Package.describe({
 });
 
 
-Package.onUse(function (api) {
+Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.4');
   api.use('underscore', ['client', 'server']);
   api.use('ejson', ['client', 'server']);
   api.use('http', ['client', 'server']);
   api.use('mongo', ['client', 'server']);
   api.use('percolate:synced-cron@1.2.0', 'server');
+  api.use(['cosmos:browserify@0.2.0'], 'client');
+
+
+  Npm.depends({
+    "money": '0.2.0'
+  });
+
+  //fx rates library
+  api.addFiles('src/client/client.browserify.js', 'client');
+  api.addFiles('src/server/fx.js', 'server');
+
 
   api.addFiles('src/common/globals.js', ['client', 'server']);
 
@@ -24,8 +35,6 @@ Package.onUse(function (api) {
   api.addFiles('js-money/currency.js', ['client', 'server']);
 
 
-  //this is from http://openexchangerates.github.io/money.js/
-  api.addFiles('money.js/money.js', ['client', 'server']);
 
   //ejson types so Money type can be used in database and DDP
   api.addFiles('src/common/ejson_types.js', ['client', 'server']);
