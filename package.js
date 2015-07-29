@@ -2,7 +2,7 @@
 
 Package.describe({
   summary: "Several useful money libraries",
-  version: "0.2.4",
+  version: "0.2.5",
   name: "andylash:money",
   git: "https://github.com/andylash/meteor-money-js.git"
 });
@@ -19,13 +19,12 @@ Package.onUse(function(api) {
 
   Npm.depends({
     "money": '0.2.0',
-    "money-core": '0.1.8'
+    "money-core": '0.1.11'
   });
 
   //fx rates library
   api.addFiles('src/client/client.browserify.js', 'client');
   api.addFiles('src/common/globals.js', ['client', 'server']);
-
 
   //ejson types so Money type can be used in database and DDP
   api.addFiles('src/common/ejson_types.js', ['client', 'server']);
