@@ -2,7 +2,7 @@
 
 Package.describe({
   summary: "Several useful money libraries",
-  version: "0.2.6",
+  version: "0.2.7",
   name: "andylash:money",
   git: "https://github.com/andylash/meteor-money-js.git"
 });
@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 
   Npm.depends({
     "money": '0.2.0',
-    "money-core": '0.1.13'
+    "money-core": '0.1.14'
   });
 
   //fx rates library
