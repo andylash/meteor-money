@@ -1,10 +1,14 @@
 {
   "dependencies": {
     "money": {
-      "version": "0.2.0"
+      "version": "0.2.0",
+      "resolved": "https://registry.npmjs.org/money/-/money-0.2.0.tgz",
+      "from": "money@0.2.0"
     },
     "money-core": {
-      "version": "0.1.13"
+      "version": "0.1.15",
+      "resolved": "https://registry.npmjs.org/money-core/-/money-core-0.1.15.tgz",
+      "from": "money-core@0.1.15"
     }
   }
 }
